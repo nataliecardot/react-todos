@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Todos from './Todos';
 
 class App extends Component {
-  // This is alternative class component syntax - class field declaration. See https://github.com/the-road-to-learn-react/react-alternative-class-component-syntax and https://www.robinwieruch.de/react-state-without-constructor
+  // This is alternative class component syntax - class field declaration, allows you to initialize local state without using the constructor and declare class methods by using arrow functions without the extra need to bind them. See https://github.com/the-road-to-learn-react/react-alternative-class-component-syntax and https://www.robinwieruch.de/react-state-without-constructor
   state = {
     todos: [
       {id: 1, content: 'Buy milk'},
