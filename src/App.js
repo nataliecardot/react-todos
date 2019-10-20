@@ -12,8 +12,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-
+      // Materialize CSS container class used to contain body content, sets to ~70% of window width
+      <div className="todo-app container">
+        <h1 className="center blue-text">Todos</h1>
+        <Todos todos={this.state.todos} />
       </div>
     );
   }
