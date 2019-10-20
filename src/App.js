@@ -10,12 +10,23 @@ class App extends Component {
     ]
   }
 
+  deleteTodo = id => {
+    // filter() method creates a new array with all elements that pass the test implemented by the provided function
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id;
+    });
+    // Using destructuring here; when key and value are same, can just put todos instead of todos: todos
+    this.setState({
+      todos
+    });
+  }
+
   render() {
     return (
       // Materialize CSS container class used to contain body content, sets to ~70% of window width
       <div className="todo-app container">
         <h1 className="center blue-text">Todos</h1>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }

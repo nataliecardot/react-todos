@@ -1,19 +1,19 @@
 import React from 'react';
-import leftPad from 'left-pad';
 
 // Stateless function component since not managing state
-const Todos = ({todos}) => {
+const Todos = ({todos, deleteTodo}) => {
 
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
         <div className="collection-item" key={todo.id}>
-          <span>{todo.content}</span>
+          {/* Passing arrow function to onClick so don't need to bind, i.e., onClick={deleteTodo.bind(this, todo.id)}, which would create a new function with a predefined first parameter, todo.id. This is needed so that when deleteTodo is called, it knows where todo.id is coming from */}
+          <span onClick={() => deleteTodo(todo.id)}>{todo.content}</span>
         </div>
       );
     })
   ) : (
-    <p className="center">You have no todos left.</p>
+    <p className="center">You're all done!</p>
   );
 
   // collection is a Materialize class
