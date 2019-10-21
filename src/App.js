@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todos from './Todos';
+import AddTodo from './AddTodo';
 
 class App extends Component {
   // This is alternative class component syntax - class field declaration, allows you to initialize local state without using the constructor and declare class methods by using arrow functions without the extra need to bind them. See https://github.com/the-road-to-learn-react/react-alternative-class-component-syntax and https://www.robinwieruch.de/react-state-without-constructor
@@ -8,6 +9,17 @@ class App extends Component {
       {id: 1, content: 'Buy milk'},
       {id: 2, content: 'Call mom'}
     ]
+  }
+
+  // todo passed in as state from handleSubmit method in child AddTodo component
+  addTodo = todo => {
+    // Attaching ID because each item iterated over needs unique key. Math.random() returns (pseudo)random number between 0 (inclusive) and 1 (exclusive)
+    todo.id = Math.random();
+    // Creating new array, and inside that array, dumping contents of todos state using spread syntax and including newly added todo
+    let todos = [...this.state.todos, todo];
+    this.setState({
+      todos
+    });
   }
 
   deleteTodo = id => {
@@ -26,6 +38,7 @@ class App extends Component {
       // Materialize CSS container class used to contain body content, sets to ~70% of window width
       <div className="todo-app container">
         <h1 className="center blue-text">Todos</h1>
+        <AddTodo addTodo={this.addTodo} />
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
