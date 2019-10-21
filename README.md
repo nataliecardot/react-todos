@@ -1,4 +1,4 @@
-# todos-redux
+# todos-react
 
 A simple to-do list app made with React and Materialize.
 
