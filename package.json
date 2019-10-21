@@ -1,6 +1,7 @@
 {
-  "name": "todo-redux",
+  "name": "react-todos",
   "version": "0.1.0",
+  "homepage": "https://nataliecardot.com/react-todos",
   "private": true,
   "dependencies": {
     "react": "^16.10.2",
