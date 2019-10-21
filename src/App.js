@@ -9,7 +9,7 @@ class App extends Component {
     todos: [
       {id: 1, content: 'Buy milk'},
       {id: 2, content: 'Call mom'},
-      {id: 2, content: 'Pick up package'}
+      {id: 3, content: 'Pick up package'}
     ]
   }
 
