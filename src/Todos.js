@@ -6,9 +6,9 @@ const Todos = ({todos, deleteTodo}) => {
   const todoList = todos.length ? (
     todos.map(todo => {
       return (
-        <div className="collection-item" key={todo.id}>
+        <div className="collection-item todo" key={todo.id} onClick={() => deleteTodo(todo.id)}>
           {/* Passing arrow function to onClick so don't need to bind, i.e., onClick={deleteTodo.bind(this, todo.id)}, which would create a new function with a predefined first parameter, todo.id. This is needed so that when deleteTodo is called, it knows where todo.id is coming from */}
-          <span onClick={() => deleteTodo(todo.id)}>{todo.content}</span>
+          <span>{todo.content}</span>
         </div>
       );
     })
