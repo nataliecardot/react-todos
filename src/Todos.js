@@ -8,7 +8,7 @@ const Todos = ({todos, deleteTodo}) => {
       return (
         <div className="collection-item todo" key={todo.id} onClick={() => deleteTodo(todo.id)}>
           {/* Passing arrow function to onClick so don't need to bind, i.e., onClick={deleteTodo.bind(this, todo.id)}, which would create a new function with a predefined first parameter, todo.id. This is needed so that when deleteTodo is called, it knows where todo.id is coming from */}
-          <span>{todo.content}</span>
+          <span><span>{todo.content}</span><span class="right grey-text">×</span></span>
         </div>
       );
     })
