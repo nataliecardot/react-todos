@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './Todos';
 import AddTodo from './AddTodo';
+import './App.css';
 
 class App extends Component {
   // This is alternative class component syntax - class field declaration, allows you to initialize local state without using the constructor and declare class methods by using arrow functions without the extra need to bind them. See https://github.com/the-road-to-learn-react/react-alternative-class-component-syntax and https://www.robinwieruch.de/react-state-without-constructor
@@ -36,9 +37,11 @@ class App extends Component {
   render() {
     return (
       // Materialize CSS container class used to contain body content, sets to ~70% of window width
-      <div className="todo-app container">
+      <div className="App container">
         <h1 className="center blue-text">Todos</h1>
         <AddTodo addTodo={this.addTodo} />
+        {/* Can't target a component with a class and add a margin, so this is a workaround to add some spacing between AddTodo and Todos components */}
+        <div className="spacing-between" />
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
