@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       // Materialize CSS container class used to contain body content, sets to ~70% of window width
-      <div className="App container">
+      <div className="container">
         <h1 className="center blue-text">Todos</h1>
         <AddTodo addTodo={this.addTodo} />
         {/* Can't target a component with a class and add a margin, so this is a workaround to add some spacing between AddTodo and Todos components */}
